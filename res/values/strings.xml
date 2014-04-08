@@ -332,8 +332,17 @@
     <!-- Mobile network settings, summary for preferred network mode LTE / WCDMA[CHAR LIMIT=100] -->
     <string name="preferred_network_mode_lte_wcdma_summary">Preferred network mode: LTE / WCDMA</string>
 
-
-    <string-array name="preferred_network_mode_choices">
+  <string-array name="preferred_network_mode_choices">
+        <item>TD-SCDMA/LTE/GSM/WCDMA/CDMA/EVDO </item>
+        <item>TD-SCDMA/GSM/WCDMA/CDMA/EVDO </item>
+        <item>TD-SCDMA/GSM/WCDMA/LTE</item>
+        <item>TD-SCDMA/WCDMA/LTE</item>
+        <item>TD-SCDMA/GSM/WCDMA</item>
+        <item>TD-SCDMA/GSM/LTE</item>
+        <item>TD-SCDMA/GSM</item>
+        <item>TD-SCDMA/LTE</item>
+        <item>TD-SCDMA/WCDMA</item>
+        <item>TD-SCDMA only</item>
         <item>LTE / WCDMA</item>
         <item>LTE</item>
         <item>Global</item>
@@ -348,7 +357,17 @@
         <item>GSM only</item>
         <item>GSM/WCDMA preferred</item>
     </string-array>
-    <string-array name="preferred_network_mode_values"  translatable="false">
+    <string-array name="preferred_network_mode_values" translatable="false">
+        <item>"22"</item>
+        <item>"21"</item>
+        <item>"20"</item>
+        <item>"19"</item>
+        <item>"18"</item>
+        <item>"17"</item>
+        <item>"16"</item>
+        <item>"15"</item>
+        <item>"14"</item>
+        <item>"13"</item>
         <item>"12"</item>
         <item>"11"</item>
         <item>"10"</item>
@@ -363,6 +382,7 @@
         <item>"1"</item>
         <item>"0"</item>
     </string-array>
+
     <!-- Mobile network settings screen, data enabling checkbox name -->
     <string name="data_enabled">Data enabled</string>
     <!-- Mobile network settings screen, setting summary text when check box is not selected (explains what selecting it would do) -->

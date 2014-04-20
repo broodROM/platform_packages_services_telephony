@@ -46,8 +46,11 @@ public class Ringer {
     private static final int PLAY_RING_ONCE = 1;
     private static final int STOP_RING = 3;
 
-    private static final int VIBRATE_LENGTH = 1000; // ms
-    private static final int PAUSE_LENGTH = 1000; // ms
+    // Implement function for altering ringer vibration pattern
+    private static final int mVibValue = SystemProperties.getInt("ro.phone.vib.length", 0);
+    private static final int mVibPause = SystemProperties.getInt("ro.phone.vib.pause", 0);
+    private final int VIBRATE_LENGTH = mVibValue;
+    private final int VIBRATE_PAUSE = mVibPause;
 
     /** The singleton instance. */
     private static Ringer sInstance;
@@ -252,6 +255,15 @@ public class Ringer {
 
     private class VibratorThread extends Thread {
         public void run() {
+
+		// Make sure the values are set to default if unset or set to 0
+		if (valuevib == 0) {
+			int VIBRATE_LENGTH = 1000;
+		}
+		if (valuepause == 0) {
+			int PAUSE_LENGTH = 1000;
+		}
+
             while (mContinueVibrating) {
                 mVibrator.vibrate(VIBRATE_LENGTH);
                 SystemClock.sleep(VIBRATE_LENGTH + PAUSE_LENGTH);

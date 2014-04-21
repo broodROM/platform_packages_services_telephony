@@ -256,17 +256,17 @@ public class Ringer {
     private class VibratorThread extends Thread {
         public void run() {
 
-		// Make sure the values are set to default if unset or set to 0
-		if (valuevib == 0) {
-			int VIBRATE_LENGTH = 1000;
-		}
-		if (valuepause == 0) {
-			int PAUSE_LENGTH = 1000;
-		}
+	    // Make sure the values are set to default if unset or set to 0
+	    if (mVibValue == 0) {
+		int VIBRATE_LENGTH = 1000;
+	    }
+	    if (mVibPause == 0) {
+		int VIBRATE_PAUSE = 1000;
+	    }
 
             while (mContinueVibrating) {
                 mVibrator.vibrate(VIBRATE_LENGTH);
-                SystemClock.sleep(VIBRATE_LENGTH + PAUSE_LENGTH);
+                SystemClock.sleep(VIBRATE_LENGTH + VIBRATE_PAUSE);
             }
         }
     }
